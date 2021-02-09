@@ -101,3 +101,14 @@ def build(c):  # pylint: disable=unused-argument
     for tag in TAGS:
         LOG.info("Building %s...", tag)
         CLIENT.images.build(path=str(CWD), rm=True, tag=tag, buildargs=buildargs)
+
+
+@task
+def publish(c):  # pylint: disable=unused-argument
+    """Publish"""
+    # pylint: disable=redefined-outer-name
+    for tag in TAGS:
+        repository = tag
+        LOG.info("Pushing %s to docker hub...", repository)
+        CLIENT.images.push(repository=repository)
+    LOG.info("Done publishing the hai Docker images")
