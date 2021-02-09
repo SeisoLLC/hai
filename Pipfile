@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pysaml2 = "*"
+cheroot = "*"
+cherrypy = "*"
+mako = "*"
+pyasn1 = "*"
+
+[dev-packages]
+invoke = "*"
+docker = "*"
+gitpython = "*"
+
+[requires]
+python_version = "3.8"
